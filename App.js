@@ -94,7 +94,7 @@ export default class App extends Component<{}> {
     let date = '9 November';
     return (
       <View style={styles.container}>
-        <Image source={require('./pics/muscle-flex-outline.png')} />
+        <Image style={styles.logo}source={require('./pics/muscle-flex-outline.png')} />
         <ScrollView>
           <View>
             <Text style={styles.dateTitle}>{this.date}</Text>
@@ -131,5 +131,9 @@ const styles = StyleSheet.create({
   },
   dateTitle: {
     fontSize: 20,
+  },
+  logo: {
+    width: 100,
+    height: 100,
   },
 });
