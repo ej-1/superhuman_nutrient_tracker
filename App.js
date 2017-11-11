@@ -29,38 +29,81 @@ export default class App extends Component<{}> {
   render() {
     let date = '9 November';
     return (
-      <View style={styles.container}>
-        <Image style={styles.logo}source={require('./pics/muscle-flex-outline.png')} />
-        <ScrollView>
-          <View>
-            <Text style={styles.dateTitle}>{this.date}</Text>
-            <View>
-              <NutrientBarList style={styles.nutrientbarlist}/>
-              <NutrientBarList style={styles.nutrientbarlist}/>
-            </View>
-            <Text>Eaten Food 1</Text>
-            <Text>Eaten Food 2</Text>
+    <ScrollView>
+        <View style={styles.main_container}>
+          <View style={styles.logo_container}>
+            <Image style={styles.logo}source={require('./pics/muscle-flex-outline.png')} />
           </View>
-        </ScrollView>
-        <AddFoodButton/>
-      </View>
+          <View style={styles.content_container} >
+            <View>
+              <Text style={styles.dateTitle}>{date}</Text>
+              <View style={styles.bars_container}>
+                <NutrientBarList style={styles.nutrientbarlist}/>
+                <NutrientBarList style={styles.nutrientbarlist}/>
+              </View>
+              <View style={styles.eaten_foods_container}>
+                <View style={styles.eaten_food}>
+                  <Text style={{fontSize:20, fontWeight: 'bold'}}>Blueberries</Text>
+                  <Text style={{fontSize:20}}> 150 g</Text>
+                </View>
+                <View style={styles.eaten_food}>
+                  <Text style={{fontSize:20, fontWeight: 'bold'}}>Milk</Text>
+                  <Text style={{fontSize:20}}> 100 g</Text>
+                </View>
+              </View>
+            </View>
+          </View>
+          <AddFoodButton/>
+        </View>
+      </ScrollView>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
+  main_container: {
     flex: 1,
-    flexDirection: 'row',
-    //justifyContent: 'center',
-    //alignItems: 'center',
+    flexDirection: 'column',
     backgroundColor: '#F5FCFF',
   },
+  logo_container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'blue',
+  },
+  content_container: {
+    flex: 1,
+    backgroundColor: 'lightgreen',
+  },
+  bars_container: {
+    flexDirection: 'row',
+    backgroundColor: 'orange',
+    flex: 1,
+  },
+  eaten_foods_container: {
+    flexDirection: 'column',
+    justifyContent: 'center',
+    backgroundColor: 'purple',
+    flex: 1,
+  },
+  eaten_food: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    backgroundColor: 'purple',
+    flex: 1,
+  },
+  nutrientbarlist: {
+    flex: 1,
+  },
+  nutrientbar: {
+  },
   dateTitle: {
-    fontSize: 20,
+    fontSize: 35,
+    fontWeight: 'bold',
   },
   logo: {
-    width: 100,
-    height: 100,
+    width: 200,
+    height: 200,
   },
 });

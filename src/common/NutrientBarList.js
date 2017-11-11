@@ -27,13 +27,13 @@ export default class NutrientBarList extends Component {
 
   render() {
     return (
-      <FlatList style={styles.nutrientbarlist}
+      <FlatList
         data={[
           {nutrient: 'Vitamin A', percentage: 0.1},
           {nutrient: 'Vitamin B', percentage: 0.25},
           {nutrient: 'Vitamin C', percentage: 0.50},
           {nutrient: 'Vitamin D', percentage: 0.75},
-          {nutrient: '', percentage: 1.0},
+          {nutrient: 'Vitamin E', percentage: 1.0},
         ]}
         renderItem={({item}) =>
           <View key={item}>
@@ -55,7 +55,4 @@ export default class NutrientBarList extends Component {
 }
 
 const styles = StyleSheet.create({
-  nutrientbarlist: {
-    flexDirection: 'row',
-  },
 });
