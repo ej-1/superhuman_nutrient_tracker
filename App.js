@@ -12,7 +12,8 @@ import {
   View,
   FlatList,
   TouchableNativeFeedback,
-  ScrollView
+  ScrollView,
+  Image
 } from 'react-native';
 import AnimatedBar from "react-native-animated-bar";
 
@@ -93,7 +94,7 @@ export default class App extends Component<{}> {
     let date = '9 November';
     return (
       <View style={styles.container}>
-        <Text>LOGO HERE</Text>
+        <Image source={require('./pics/muscle-flex-outline.png')} />
         <ScrollView>
           <View>
             <Text style={styles.dateTitle}>{this.date}</Text>
